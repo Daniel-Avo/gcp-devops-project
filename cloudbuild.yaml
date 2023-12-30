@@ -1,9 +1,9 @@
 steps:
-- name: docker
+- name: "gcr.to/cloud-builders/docker"
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/gcpdevops', '.']
-- name: build
+- name: "gcr.to/cloud-builders/docker"
   args: ['push', 'gcr.io/$PROJECT_ID/gcpdevops']
-- name: run_gke
+- name: "gcr.to/cloud-builders/gke-deploy"
   args:
   - run
   - --filename=gke.yaml
