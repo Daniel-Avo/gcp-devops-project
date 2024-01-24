@@ -21,7 +21,7 @@ spec:
           - name: PORT
             value: "5000"
           - name: DISCLOSED_STRING
-            value: "DISCLOSED_STRING"
+            value: "elo"
 ---
 apiVersion: v1
 kind: Service
