@@ -12,4 +12,4 @@ def env():
 
 @app.route('/secret')
 def secret():
-    return 'SECRET_STRING'
+    return os.environ["SECRET_STRING"]
