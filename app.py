@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 app = Flask(__name__)
 
@@ -7,7 +8,7 @@ def hello_world():
 
 @app.route('/env')
 def env():
-    return 'DISCLOSED_STRING'
+    return os.environ["DISCLOSED_STRING"]
 
 @app.route('/secret')
 def secret():
