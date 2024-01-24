@@ -18,10 +18,13 @@ spec:
         ports:
         - containerPort: 5000
         env:
-          - name: PORT
-            value: "5000"
           - name: DISCLOSED_STRING
-            value: "elo"
+            value: "DISCLOSED_STRING"
+          - name: SECRET_STRING
+            valueFrom:
+              secretKeyRef:
+                name: mysecret
+                key: SECRET_STRING        
 ---
 apiVersion: v1
 kind: Service
@@ -40,3 +43,10 @@ spec:
   type: LoadBalancer
 
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-string
+  namespace: gcp-devops-prod
+data:
+  SECRET_STRING: c2VjcmV0LXZhbHVl
