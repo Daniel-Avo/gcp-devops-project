@@ -20,6 +20,8 @@ spec:
         env:
           - name: PORT
             value: "5000"
+          - name: DISCLOSED_STRING
+            value: "DISCLOSED_STRING"
 ---
 apiVersion: v1
 kind: Service
@@ -36,3 +38,5 @@ spec:
       port: 80
       targetPort: 5000
   type: LoadBalancer
+
+---
